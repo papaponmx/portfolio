@@ -1,25 +1,22 @@
-// date: 1 Aug, 2022
+// date: 15 Aug, 2024
 const bioData = [
     {
-        name: 'nxt lnk',
-        username: 'nxtlnk.vercel.app',
-        url: 'https://nxtlnk.vercel.app',
-        titleImg: true,
-        avatar: '/avatar.png',
-        nftAvatar: true,
-        description: 'Custom bio links for creatives who love coding. Made this first to use for my own weblinks vjy.me/lnk. ',
+        name: 'Jaime Rios',
+        username: 'jaime.rios@hey.com',
+        url: 'https://github.com/papaponmx',
+        titleImg: false,
+        avatar: '/avatar.png', // You may need to update this path
+        nftAvatar: false,
+        description: 'Full Stack Developer with extensive experience in Front End technologies.',
         descShow: true,
-        subdesc: 'Use this template and deploy on vercel for free',
+        subdesc: 'Senior Full Stack Developer / Software Designer / Career Lead at Globant',
         subdescShow: true,
-        newProductUrl: 'https://3dicons.co',
-        newProduct: true,
-        author: 'realvjy',
-        authorURL: 'https://twitter.com/realvjy',
-        footerText: 'made by'
+        newProductUrl: '', // You can add a URL to your latest project here if desired
+        newProduct: false,
+        author: 'Jaime Rios',
+        authorURL: 'https://github.com/papaponmx',
+        footerText: 'Connect with me'
     },
 ];
 
 export default bioData;
-
-
-
