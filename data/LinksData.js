@@ -1,166 +1,94 @@
-// date 29-Jul, 2022
+// date 15-Aug, 2024
 const webLinks = [
-    // All social profile
+    // Social profiles
     {
-        title: 'Twitter',
-        url: 'https://twitter.com/realvjy',
-        type: 'social',
-        icon: '/twitter.svg',
-        on: true
-    },
-    {
-        title: 'Instagram',
-        url: 'https://instagram.com/realvjy',
-        type: 'social',
-        icon: '/insta.svg',
-        on: true
-    },
-    {
-        title: 'Dribbble',
-        url: 'https://dribbble.com/realvjy',
-        type: 'social',
-        icon: '/dribbble.svg',
-        on: false
-    },
-    {
-        title: 'Medium',
-        url: 'https://medium.com/@realvjy',
-        type: 'social',
-        icon: '/medium.svg',
-        on: false
-    },
-    {
-        title: 'Github',
-        url: 'https://github.com/realvjy',
+        title: 'GitHub',
+        url: 'https://github.com/papaponmx',
         type: 'social',
         icon: '/github.svg',
         on: true
     },
     {
-        title: 'Youtube',
-        url: 'https://youtube.com/realvjy',
-        type: 'social',
-        icon: '/youtube.svg',
-        on: false
-    },
-    {
-        title: 'Figma',
-        url: 'https://figma.com/@realvjy',
-        type: 'social',
-        icon: '/figma.svg',
-        on: true
-    },
-    {
-        title: 'Behance',
-        url: 'https://behance.net/realvjy',
-        type: 'social',
-        icon: '/behance.svg',
-        on: false
-    },
-    {
-        title: 'Linkedin',
+        title: 'LinkedIn',
         url: 'https://www.linkedin.com/in/realvjy/',
         type: 'social',
         icon: '/linkedin.svg',
-        on: false
+        on: true
     },
+    // Projects section
     {
-        title: 'Mastodon',
-        url: 'https://mastodon.online/@realvjy',
-        type: 'social',
-        icon: '/mastodon.svg',
+        title: 'LAC Fan App',
+        url: '/projects/lac',
+        type: 'project',
+        icon: '/project-icon.svg',
+        on: true
+    },
+    // Experience section
+    {
+        title: 'Globant',
+        url: 'https://www.globant.com/',
+        type: 'experience',
+        icon: '/work.svg',
         on: true
     },
     {
-        title: 'Hive Social',
-        url: 'https://www.hivesocial.app/?@realvjy',
-        type: 'social',
-        icon: '/hive.svg',
-        on: false
-    },
-    {
-        title: 'Post',
-        url: 'https://www.post.news/realvjy',
-        type: 'social',
-        icon: '/post.svg',
-        on: false
-    },
-    {
-        title: 'foundation',
-        url: 'https://vjy.me',
-        type: 'nft',
-        icon: '/foundation.svg',
-        on: false
-    },
-    {
-        title: 'opensea',
-        url: 'https://vjy.me',
-        type: 'nft',
-        icon: '/opensea.svg',
-        on: false
-    },
-    {
-        title: 'new collection',
-        url: 'https://vjy.me',
-        type: 'nft',
-        icon: '/opensea.svg',
-        on: false
-    },
-    // Install section
-    {
-        title: 'Use this template',
-        url: 'https://github.com/realvjy/nxt-lnk/generate',
-        type: 'install',
-        icon: '/use.png',
+        title: 'TVG',
+        url: 'https://www.tvg.com/',
+        type: 'experience',
+        icon: '/work.svg',
         on: true
     },
     {
-        title: 'Deploy on Vercel',
-        url: 'https://vercel.com/import/git?s=https://github.com/realvjy/nxt-lnk',
-        type: 'install',
-        icon: '/vercel.svg',
+        title: 'UnoSquare',
+        url: 'https://unosquare.com/',
+        type: 'experience',
+        icon: '/work.svg',
         on: true
     },
     {
-        title: 'Documentation',
-        url: 'https://github.com/realvjy/nxt-lnk#nxt-lnk',
-        type: 'install',
-        icon: '/doc.png',
+        title: 'Sngular',
+        url: 'https://www.sngular.com/',
+        type: 'experience',
+        icon: '/work.svg',
+        on: true
+    },
+    // Skills section
+    {
+        title: 'JavaScript (ES6 and TypeScript)',
+        url: '#',
+        type: 'skill',
+        icon: '/skill.svg',
         on: true
     },
     {
-        title: 'Github',
-        url: 'https://github.com/realvjy/nxt-lnk',
-        type: 'install',
-        icon: '/github-fill.svg',
+        title: 'HTML5, CSS3',
+        url: '#',
+        type: 'skill',
+        icon: '/skill.svg',
         on: true
     },
-
     {
-        title: 'Buy Me a Coffee',
-        url: 'https://www.buymeacoffee.com/realvjy',
-        type: 'other',
-        icon: '/bmc.png',
+        title: 'React, Angular, Node.js',
+        url: '#',
+        type: 'skill',
+        icon: '/skill.svg',
         on: true
     },
-
     {
-        title: 'link demo',
-        url: 'https://vjy.me/lnk',
-        type: 'other',
-        icon: '/vjy.png',
+        title: 'GraphQL, Prisma, Docker',
+        url: '#',
+        type: 'skill',
+        icon: '/skill.svg',
         on: true
     },
-
+    // Contact section
     {
-        title: 'maker website',
-        url: 'https://vjy.me',
-        type: 'other',
-        icon: '/vjy.png',
+        title: 'Email',
+        url: 'mailto:jaime.rios@hey.com',
+        type: 'contact',
+        icon: '/email.svg',
         on: true
     },
 ];
 
 export default webLinks;
-
-

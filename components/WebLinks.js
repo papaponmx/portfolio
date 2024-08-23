@@ -49,6 +49,11 @@ const Links = () => {
     return el.type === "social" && el.on
   });
 
+  // Get data for projects section
+  const projects = allLinks.filter((el) => {
+    return el.type === "project" && el.on
+  });
+
   // Get data for install section
   const install = allLinks.filter((el) => {
     return el.type === "install" && el.on
@@ -65,147 +70,165 @@ const Links = () => {
   });
 
   return (
-      <LinkWrapper>
-        <LinkContainer>
-          <TopPart>
-            <LinkHeader>
-              <Avatar>
-                <AvatarWrap>
-                  {/* Avatar svg  hex or oval if nftAvatar=true will convert to hex */}
-                  <HexIcon />
-                  <OvalIcon />
-                  <div className={`${avatarShape} avatar-border`}></div>
-                  <div className={`${avatarShape} avatar-fill`}></div>
-                  <img
-                      src={avatarImg}
-                      className={avatarShape}
-                  />
-                </AvatarWrap>
-              </Avatar>
-              <Title>
-                {/* Using titleimg flag to use image as title or text */}
-                {titleImg ?
-                    <img src={titleImage} className="handle" /> :
-                    <h1>{name}</h1>
-                }
-                {/* if your remove username from data it will not appear */}
+    <LinkWrapper>
+      <LinkContainer>
+        <TopPart>
+          <LinkHeader>
+            <Avatar>
+              <AvatarWrap>
+                {/* Avatar svg  hex or oval if nftAvatar=true will convert to hex */}
+                <HexIcon />
+                <OvalIcon />
+                <div className={`${avatarShape} avatar-border`}></div>
+                <div className={`${avatarShape} avatar-fill`}></div>
+                <img
+                  src={avatarImg}
+                  className={avatarShape}
+                />
+              </AvatarWrap>
+            </Avatar>
+            <Title>
+              {/* Using titleimg flag to use image as title or text */}
+              {titleImg ?
+                <img src={titleImage} className="handle" /> :
+                <h1>{name}</h1>
+              }
+              {/* if your remove username from data it will not appear */}
+              {
+                username ? <h3><a href={`${url}`}>{username}</a></h3> : ''
+              }
+            </Title>
+          </LinkHeader>
+
+          {/* Bio Section */}
+          <LinkBio>
+            {description && <h1>{descriptionText} </h1>}
+            {subdesc && <h4>{subdescText}</h4>}
+          </LinkBio>
+          {/* End Bio Section */}
+
+          {/* Weblinks started */}
+          <WebLinkWrap>
+            {/* Social Icon */}
+            <LinkSection className="social">
+              <div className="iconsonly">
                 {
-                  username ? <h3><a href={`${url}`}>{username}</a></h3> : ''
+                  social.map((i) => {
+                    return (
+                      <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
+                        <LinkBox className="socialIcon">
+                          <img src={i.icon} style={{ filter: 'var(--img)' }} />
+                        </LinkBox>
+                      </a>
+                    )
+                  })
                 }
-              </Title>
-            </LinkHeader>
+              </div>
+            </LinkSection>
+            {/* Social Icon */}
 
-            {/* Bio Section */}
-            <LinkBio>
-              {description && <h1>{descriptionText} </h1>}
-              {subdesc && <h4>{subdescText}</h4>}
-            </LinkBio>
-            {/* End Bio Section */}
-
-            {/* Weblinks started */}
-            <WebLinkWrap>
-              {/* Social Icon */}
-              <LinkSection className="social">
-                <div className="iconsonly">
+            {/* Install Section */}
+            {
+              install.length > 0 ?
+                <LinkSection>
+                  <h3>{install[0].type}</h3>
                   {
-                    social.map((i) => {
+                    install.map((i) => {
                       return (
-                          <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
-                            <LinkBox className="socialIcon">
-                              <img src={i.icon} style={{ filter: 'var(--img)' }} />
-                            </LinkBox>
-                          </a>
+                        <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
+                          <LinkBox>
+                            <LinkTitle><img src={i.icon} style={{ filter: 'var(--img)' }} /> {i.title}</LinkTitle> <NewUp />
+                          </LinkBox>
+                        </a>
                       )
                     })
                   }
-                </div>
-              </LinkSection>
-              {/* Social Icon */}
+                </LinkSection> : ''
+            }
+            {/* End Install Section */}
 
-              {/* Install Section */}
-              {
-                install.length > 0 ?
-                    <LinkSection>
-                      <h3>{install[0].type}</h3>
-                      {
-                        install.map((i) => {
-                          return (
-                              <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
-                                <LinkBox>
-                                  <LinkTitle><img src={i.icon} style={{ filter: 'var(--img)' }} /> {i.title}</LinkTitle> <NewUp />
-                                </LinkBox>
-                              </a>
-                          )
-                        })
-                      }
-                    </LinkSection> : ''
-              }
-              {/* End Install Section */}
-
-              {/* NFT Section */}
-              {
-                nfts.length > 0 ?
-                    <LinkSection>
-                      <h3>{nfts[0].type}s</h3>
-                      {
-                        nfts.map((i) => {
-                          return (
-                              <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
-                                <LinkBox>
-                                  <LinkTitle><img src={i.icon} style={{ filter: 'var(--img)' }} /> {i.title}</LinkTitle> <NewUp />
-                                </LinkBox>
-                              </a>
-                          )
-                        })
-                      }
-                    </LinkSection>
-                    : ''
-              }
-              {/* End NFT Section */}
-
-              {/* Other Section */}
-              {
-                others.length > 0 ?
-                    <LinkSection>
-                      <h3>{others[0].type}</h3>
-                      {/* BioData.js > newProduct == true */}
-                      {/* New Section will render once newProduct == true */}
-                      {(newProduct) ? <NewSection>
-                        <a href={newProductUrl} target="_blank" rel="noreferrer">
-                          <img
-                              src={'/newproduct.png'}
-                              className="newproduct"
-                          />
+            {/* NFT Section */}
+            {
+              nfts.length > 0 ?
+                <LinkSection>
+                  <h3>{nfts[0].type}s</h3>
+                  {
+                    nfts.map((i) => {
+                      return (
+                        <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
+                          <LinkBox>
+                            <LinkTitle><img src={i.icon} style={{ filter: 'var(--img)' }} /> {i.title}</LinkTitle> <NewUp />
+                          </LinkBox>
                         </a>
-                      </NewSection> : ''
-                      }
-                      {/* End Biodata.js, You can move this section anywhere */}
-                      {
-                        others.map((i) => {
-                          return (
-                              <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
-                                <LinkBox>
-                                  <LinkTitle><img src={i.icon} /> {i.title}</LinkTitle> <NewUp />
-                                </LinkBox>
-                              </a>
-                          )
-                        })
-                      }
-                    </LinkSection> : ''
-              }
-              {/* End Other Section */}
+                      )
+                    })
+                  }
+                </LinkSection>
+                : ''
+            }
+            {/* End NFT Section */}
+            {projects.length > 0 && (
+              <LinkSection>
+                <h3>Projects</h3>
+                {projects.map((project) => (
+                  <Link href={project.url} key={project.title} passHref>
+                    <a>
+                      <LinkBox>
+                        <LinkTitle>
+                          <img src={project.icon} style={{ filter: 'var(--img)' }} />
+                          {project.title}
+                        </LinkTitle>
+                        <NewUp />
+                      </LinkBox>
+                    </a>
+                  </Link>
+                ))}
+              </LinkSection>
+            )}
 
-            </WebLinkWrap>
-            {/* End Weblinks */}
-          </TopPart>
-          <BottomPart>
-            <LinkFoot>
-              <h4>{footerText} <a href={authorURL}>{author}</a></h4>
-            </LinkFoot>
-          </BottomPart>
+            {/* Other Section */}
+            {
+              others.length > 0 ?
+                <LinkSection>
+                  <h3>{others[0].type}</h3>
+                  {/* BioData.js > newProduct == true */}
+                  {/* New Section will render once newProduct == true */}
+                  {(newProduct) ? <NewSection>
+                    <a href={newProductUrl} target="_blank" rel="noreferrer">
+                      <img
+                        src={'/newproduct.png'}
+                        className="newproduct"
+                      />
+                    </a>
+                  </NewSection> : ''
+                  }
+                  {/* End Biodata.js, You can move this section anywhere */}
+                  {
+                    others.map((i) => {
+                      return (
+                        <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
+                          <LinkBox>
+                            <LinkTitle><img src={i.icon} /> {i.title}</LinkTitle> <NewUp />
+                          </LinkBox>
+                        </a>
+                      )
+                    })
+                  }
+                </LinkSection> : ''
+            }
+            {/* End Other Section */}
 
-        </LinkContainer>
-      </LinkWrapper>
+          </WebLinkWrap>
+          {/* End Weblinks */}
+        </TopPart>
+        <BottomPart>
+          <LinkFoot>
+            <h4>{footerText} <a href={authorURL}>{author}</a></h4>
+          </LinkFoot>
+        </BottomPart>
+
+      </LinkContainer>
+    </LinkWrapper>
 
   )
 };
@@ -271,7 +294,7 @@ const Title = styled.div`
     h1{
       font-size: 38px;
       font-weight: 700;
-      
+
       letter-spacing: -2px;
       background: linear-gradient(90deg, #4AB1F1 5.71%, #566CEC 33.77%, #D749AF 61.82%, #FF7C51 91.21%);
       -webkit-background-clip: text;
@@ -293,8 +316,8 @@ const Title = styled.div`
         margin-top:2px;
       }
     }
-    
- 
+
+
     .name{
       margin-top: 8px;
       @media screen and (max-width: ${({ theme }) => theme.deviceSize.tablet}) {
@@ -362,14 +385,14 @@ const LinkBio = styled.div`
 `
 
 const TopPart = styled.div`
-    
+
 `
 
 
 
 const BottomPart = styled.div`
     margin-bottom: 40px;
-    
+
 `
 const LinkFoot = styled.div`
     h4{
@@ -446,7 +469,7 @@ const LinkBox = styled.div`
     letter-spacing: -.5px;
     position: relative;
     text-align: center;
-    
+
     &::before{
       content: "";
       border-radius: 12px;
@@ -471,7 +494,7 @@ const LinkBox = styled.div`
       transform: scale(.8);
       opacity: .7;
     }
-    
+
     &.socialIcon{
       padding: 16px;
       border-radius: 50%;
@@ -480,7 +503,7 @@ const LinkBox = styled.div`
       img{
         height: 24px;
       }
-     
+
       @media screen and (max-width: ${({ theme }) => theme.deviceSize.tablet}) {
         padding: 10px;
         margin: 2px;
