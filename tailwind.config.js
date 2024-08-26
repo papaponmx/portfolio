@@ -4,7 +4,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Barlow', 'sans-serif'],
+      },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '16/9': '16 / 9',
+      },
+    },
   },
   plugins: [],
 }

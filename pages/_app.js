@@ -9,6 +9,7 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
 import '../styles/global.css'
+import '../styles/fonts.css'
 
 function MyApp({ Component, pageProps }) {
   const darkMode = useDarkMode(false, { storageKey: null, onChange: null })
