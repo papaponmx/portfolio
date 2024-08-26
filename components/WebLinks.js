@@ -2,11 +2,10 @@
 // created by @realvjy
 // date: 29 Jul, 2022
 
-import Image from "next/image";
 import styled from "styled-components";
-import { Button, ButtonLink, Container, StyledLink } from "./ReusableStyles";
+import { Container } from "./ReusableStyles";
 import Link from "next/link";
-import { ChevronRightIcon, HexIcon, HomeIcon, TwitterIcon, NewUp, OvalIcon } from './icons';
+import { HexIcon, NewUp, OvalIcon } from './icons';
 import allLinks from "../data/LinksData";
 import bioData from "../data/BioData";
 
@@ -74,7 +73,10 @@ const Links = () => {
       <LinkContainer>
         <TopPart>
           <LinkHeader>
-            <Avatar>
+            <Avatar
+              width='100px'
+              height='100px'
+            >
               <AvatarWrap>
                 {/* Avatar svg  hex or oval if nftAvatar=true will convert to hex */}
                 <HexIcon />
@@ -84,6 +86,7 @@ const Links = () => {
                 <img
                   src={avatarImg}
                   className={avatarShape}
+                  alt=""
                 />
               </AvatarWrap>
             </Avatar>
