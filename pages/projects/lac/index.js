@@ -13,6 +13,7 @@ const ImageFrame = ({ src, alt }) => (
 );
 
 const Home = ({ images }) => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-red-100 text-gray-800 font-sans">
       <Head>
@@ -44,7 +45,8 @@ const Home = ({ images }) => {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-800">Intuit Dome Suite Ordering Platform</h1>
           <p className="text-xl mb-6 text-red-700 font-semibold">Seamless food and beverage ordering for LA Clippers&apos; events</p>
           <p className="text-lg text-gray-800 mx-auto max-w-2xl">
-            Experience our responsive and user-friendly web view for the LA Clippers&apos; new Intuit Dome. Order food and beverages effortlessly during events. We built this solution from scratch using React and AWS, delivering an MVP in just three weeks. <a href="#" className="text-blue-600 underline font-medium hover:text-blue-800">Read the full case study here.</a>
+            Experience our responsive and user-friendly web view for the LA Clippers&apos; new Intuit Dome. Order food and beverages effortlessly during events. We built this solution from scratch using React and AWS, delivering an MVP in just three weeks.
+            {/* TODO: Add link once article is published. <a href="#" className="text-blue-600 underline font-medium hover:text-blue-800">Read the full case study here.</a> */}
           </p>
         </header>
 
@@ -92,7 +94,7 @@ const Home = ({ images }) => {
           </div>
 
           <div className="relative mt-8 pt-4 border-t border-gray-200 text-center text-sm text-gray-500">
-            © 2024 Jaime Rios. All rights reserved. | Inspired by LA Clippers
+            © {currentYear} Jaime Rios. All rights reserved.
           </div>
         </footer>
 
