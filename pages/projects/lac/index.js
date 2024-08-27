@@ -43,7 +43,7 @@ const Home = ({ images }) => {
       <main className="p-8 max-w-4xl mx-auto text-center">
         <header className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-800">Elevating Event Experiences with Intuit Dome Suite Ordering</h1>
-          <p className="text-xl mb-6 text-red-700 font-semibold">Streamlined food and beverage ordering for LA Clippers' premium suite guests</p>
+          <p className="text-xl mb-6 text-red-700 font-semibold">Streamlined food and beverage ordering for LA Clippers&apos; premium suite guests</p>
           <p className="text-lg text-gray-800 mx-auto max-w-2xl">
             Discover how we transformed suite service at the LA Clippers&apos; Intuit Dome, enabling premium guests to effortlessly order food and beverages from a single, sleek interface. Built with React and AWS, this solution was designed to enhance the luxury experience while ensuring efficiency and reliability. Our team delivered a fully functional MVP in just three weeks, setting a new standard for in-event service.
           </p>
