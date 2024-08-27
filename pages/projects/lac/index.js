@@ -51,7 +51,7 @@ const Home = ({ images }) => {
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-blue-700">Visual Tour: Seamless Ordering at Intuit Dome</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {images.map((src, index) => (
               <div key={index} className="w-full max-w-sm mx-auto">
                 <ImageFrame src={src} alt={`Intuit Dome Suite Ordering Platform screenshot ${index + 1}`} />
@@ -182,12 +182,15 @@ const Home = ({ images }) => {
 
 export async function getStaticProps() {
   const images = [
-    '/shots1.png',
-    '/shots2.png',
-    '/shots3.png',
-    '/shots4.png',
-    '/shots5.png',
-    '/shots6.png',
+    '/shots/shots1.png',
+    '/shots/shots2.png',
+    '/shots/shots3.png',
+    '/shots/shots4.png',
+    '/shots/shots5.png',
+    '/shots/shots6.png',
+    '/shots/shots7.png',
+    '/shots/shots8.png',
+    '/shots/shots9.png',
   ];
 
   return {
