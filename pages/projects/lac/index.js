@@ -81,11 +81,14 @@ const Home = ({ images }) => {
           <p className="text-lg text-gray-800 mx-auto max-w-2xl">
             Discover how we transformed suite service at the LA Clippers&apos;
             Intuit Dome, enabling premium guests to effortlessly order food and
-            beverages from a single, sleek interface. Built with React and AWS,
-            this solution was designed to enhance the luxury experience while
-            ensuring efficiency and reliability. Our team delivered a fully
-            functional MVP in just three weeks, setting a new standard for
-            in-event service.
+            beverages from a single, sleek interface.
+          </p>
+          <br />
+          <p className="text-lg text-gray-800 mx-auto max-w-2xl">
+            Built with React and AWS, this solution was designed to enhance the
+            luxury experience while ensuring efficiency and reliability. Our
+            team delivered a fully functional MVP in just three weeks, setting a
+            new standard for in-event service.
           </p>
         </header>
 
@@ -93,7 +96,7 @@ const Home = ({ images }) => {
           <h2 className="text-3xl font-bold mb-6 text-blue-700">
             Visual Tour: Seamless Ordering at Intuit Dome
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
             {images.map((src, index) => (
               <div key={index} className="w-full max-w-sm mx-auto">
                 <ImageFrame
@@ -324,7 +327,6 @@ export async function getStaticProps() {
     "/shots/shots6.png",
     "/shots/shots7.png",
     "/shots/shots8.png",
-    "/shots/shots9.png",
   ];
 
   return {
