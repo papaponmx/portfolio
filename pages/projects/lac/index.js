@@ -72,7 +72,7 @@ const Home = ({ images }) => {
       <main className="p-8 max-w-4xl mx-auto text-center">
         <header className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-800">
-            Elevating Event Experiences with Intuit Dome Suite Ordering
+            Reinventing LA Clippers Online Food Odering System
           </h1>
           <p className="text-xl mb-6 text-red-700 font-semibold">
             Streamlined food and beverage ordering for LA Clippers&apos; premium
@@ -93,17 +93,13 @@ const Home = ({ images }) => {
         </header>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-blue-700">
-            Visual Tour: Seamless Ordering at Intuit Dome
-          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
             {images.map((src, index) => (
               <div key={index} className="w-full max-w-sm mx-auto">
                 <ImageFrame
                   src={src}
-                  alt={`Intuit Dome Suite Ordering Platform screenshot ${
-                    index + 1
-                  }`}
+                  alt={`Intuit Dome Suite Ordering Platform screenshot ${index + 1
+                    }`}
                 />
               </div>
             ))}
